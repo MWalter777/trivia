@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriviaKodigo</title>
+    <link rel="shortcut icon" href="img/trofeo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome.css">
+
+</head>
+<body>
+    <div class="bienvenido" id="informacion">
+        <section class="seccion_usuario">
+            <h1>Usuario</h1>
+            <div class="textbox">
+                <img src="img/user_font.svg" alt="u" width="26" height="26">
+                <input type="text" name="username" id="username"  placeholder="Nombre" required="True">
+            </div>
+            <button class="btn_iniciar" onclick="iniciar_juego()">Jugar</button>
+        </section>
+        <h3 id="ingresar_username"></h3>
+    </div>
+
+    <div class="juego" id="juego">
+
+        <section class="cuerpo">
+            <section class="perfil">
+                <img src="img/user_font.svg" alt="user" width="100px" height="100px">
+                <h3 id="user"></h3>
+                <div class="puntuacion">
+                    <div class="respuestas">
+                        <img src="img/me-gusta.png" alt="corectas" height="25" width="25">
+                        <h5 id="res_correctas">Correctas:</h5>
+                    </div>
+                    <div class="respuestas">
+                        <img src="img/disgusto.svg" alt="corectas" height="25" width="25">
+                        <h5 id="res_incorrectas">Incorrectas:</h5>
+                    </div>
+                    <div>
+                        <h4><strong id="respuesta"></strong> </h4>
+                        <h4><strong id="respuesta1"></strong> </h4>
+                        <h4><strong id="respuesta2"></strong> </h4>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="tabla_periodica">
+                <div id="gestion_tiempo">
+                    <label for="tiempo"><strong id="tiempo_finalizado"></strong></label>
+                    <img src="img/reloj.svg" alt="reloj" height="80px" width="80px">
+                    <label for="tiempo"><strong id="tiempo">0:00s</strong></label>
+                </div>
+                <div>
+                    <label for="tiempo">El Simbolo <strong id="pregunta"></strong><strong id="res"></strong> </label>
+                </div>
+                <div id="opcion_respuesta" class="radios_respuestas">
+                    <div class="radio" id="option1">
+                        <input type="radio" name="opcion" id="opcion1" value="opcion1">
+                        <label id="option_1" for="opcion1">H</label>
+                    </div>
+                    <div class="radio" id="option2">
+                        <input type="radio" name="opcion" id="opcion2" value="opcion2">
+                        <label id="option_2" for="opcion2">H</label>
+                    </div>
+                    <div class="radio" id="option3">
+                        <input type="radio" name="opcion" id="opcion3" value="opcion3">
+                        <label id="option_3" for="opcion3">H</label>
+                    </div>
+                    <div class="radio" id="option4">
+                        <input type="radio" name="opcion" id="opcion4" value="opcion4">
+                        <label id="option_4" for="opcion4">H</label>
+                    </div>
+                </div>
+                <div class="restantes">
+                    <strong id="restantes">1/20</strong>
+                </div>
+                <button id="siguiente" onclick="validar()" class="btn">Siguiente</button>
+            </section>
+        
+            <section class="configuracion">
+                <strong>Configuracion</strong>
+                <label for="dificultad">Tipo de trivia</label>
+                <div class="radio">
+                    <input type="radio" name="tipo" id="tipo1" value="opcion_multiple">
+                    <label for="tipo1">Opcion Multiple</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="tipo" id="tipo2" value="verdadero_falso">
+                    <label for="tipo2">Verdadero y falso</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="tipo" id="tipo3" value="mixto" checked="true">
+                    <label for="tipo3">Aleatoreo</label>
+                </div>
+
+                <label for="dificultad">Dificultad</label>
+                <div class="radio">
+                    <input type="radio" name="dificultad" id="dificultad1" value="facil" checked="true">
+                    <label for="dificultad1">Facil</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="dificultad" id="dificultad2" value="medio">
+                    <label for="dificultad2">Medio</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="dificultad" id="dificultad3" value="dificil">
+                    <label for="dificultad3">Dificil</label>
+                </div>
+
+                <label for="Resultados">Mostrar Resultados</label>
+                <div class="checkbox">
+                    <input type="checkbox" name="ver_resultado" id="ver_resultado">
+                    <label for="ver_resultado">Ver resultado</label>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="ver_respuesta" id="ver_respuesta">
+                    <label for="ver_respuesta">Ver respuesta</label>
+                </div>
+
+                <button class="btn_iniciar" onclick="empezar()">Jugar</button>
+
+            </section>
+        </section>
+    </div>
+
+
+    <div class="resultados_finales" id="resultados_finales">
+        <section class="resultado_final">
+            <form action="" class="centrado">
+                <h3 id="total_correctas"></h3>
+                <button type="submit" class="btn">Volver a jugar</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <img src="img/trofeo.png" alt="trofeo" width="20px" height="20px">
+        <h3>TriviaKodigo</h3>
+    </footer>
+</body>
+<script src="datos/datos.js"></script>
+<script src="main.js"></script>
+</html>
